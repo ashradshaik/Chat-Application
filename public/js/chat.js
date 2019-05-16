@@ -96,8 +96,6 @@ $sendLocationButton.addEventListener('click', ()=>{
     }
     $sendLocationButton.setAttribute('disabled', 'disabled')
     navigator.geolocation.getCurrentPosition((position)=>{
-        //console.log(position.coords.latitude)
-
         const latitude = position.coords.latitude
         const longitude = position.coords.longitude
         socket.emit('sendLocation', {
